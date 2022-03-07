@@ -1,9 +1,9 @@
 cnpm install gitbook-plugin-code gitbook-plugin-valine gitbook-plugin-pageview-count gitbook-plugin-hide-element gitbook-plugin-google-adsense gitbook-plugin-theme-comscore gitbook-plugin-anchors gitbook-plugin-lunr gitbook-plugin-search gitbook-plugin-search-plus gitbook-plugin-highlight gitbook-plugin-popup gitbook-plugin-prism gitbook-plugin-prism-themes gitbook-plugin-github-buttons gitbook-plugin-splitter gitbook-plugin-sharing gitbook-plugin-sharing-plus gitbook-plugin-tbfed-pagefooter gitbook-plugin-expandable-chapters-small gitbook-plugin-ga gitbook-plugin-favicon gitbook-plugin-lightbox gitbook-plugin-expandable-chapters gitbook-plugin-chapter-fold gitbook-plugin-donate gitbook-plugin-sitemap-general gitbook-plugin-copy-code-button gitbook-plugin-callouts gitbook-plugin-toolbar-button gitbook-plugin-ancre-navigation
 
 
+gitbook build
 
 rm docs
 
-gitbook build
-
 mv _book docs
+
