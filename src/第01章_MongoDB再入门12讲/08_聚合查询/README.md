@@ -34,3 +34,4 @@ db.comment.insertMany([{"_id":"1","articleid":"100001","content":"我们不应�
 
 ![1646637564703](README/1646637564703.png)
 
+![1646637637316](README/1646637637316.png)
