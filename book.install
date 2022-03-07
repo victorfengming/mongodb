@@ -2,3 +2,8 @@ cnpm install gitbook-plugin-code gitbook-plugin-valine gitbook-plugin-pageview-c
 
 
 
+rm -rf docs
+
+gitbook build
+
+mv _book docs
