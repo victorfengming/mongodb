@@ -1,10 +1,370 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>mongodb</title>
-</head>
-<body>
-    mongodb nb!
-</body>
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Introduction · mongodb</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Victor <victorfengming@163.com>">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="第01章_MongoDB再入门12讲/" />
+    
+    
+
+    
+        <link rel="shortcut icon" href='img/avator.png.icon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='img/avator.png.icon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://blog.colemak.cn/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="第01章_MongoDB再入门12讲/">
+            
+                <a href="第01章_MongoDB再入门12讲/">
+            
+                    
+                    第01章_MongoDB再入门12讲
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="第02章_从熟练到精通的开发之路12讲/">
+            
+                <a href="第02章_从熟练到精通的开发之路12讲/">
+            
+                    
+                    第02章_从熟练到精通的开发之路12讲
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="第03章_分片集群与高级运维之道16讲/">
+            
+                <a href="第03章_分片集群与高级运维之道16讲/">
+            
+                    
+                    第03章_分片集群与高级运维之道16讲
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="第04章_企业架构师进阶之法13讲/">
+            
+                <a href="第04章_企业架构师进阶之法13讲/">
+            
+                    
+                    第04章_企业架构师进阶之法13讲
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#introduction"><b></b>Introduction</a></li></ul></div><a href="#introduction" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="introduction"><a name="introduction" class="anchor-navigation-ex-anchor" href="#introduction"><i class="fa fa-link" aria-hidden="true"></i></a>Introduction</h1>
+<p>mongodb</p>
+<p>MongoDB&#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;,&#x9AD8;&#x6027;&#x80FD;,&#x65E0;&#x6A21;&#x5F0F;&#x7684;&#x6587;&#x6863;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x5E93;,&#x5F53;&#x521D;&#x8BBE;&#x8BA1;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x662F;&#x7528;&#x4E8E;&#x7B80;&#x5316;&#x5F00;&#x53D1;&#x548C;&#x65B9;&#x4FBF;&#x6269;&#x5C55;,&#x662F;NoSQL&#x4E2D;&#x6700;&#x50CF;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;(Mysql)&#x7684;&#x8D39;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;.</p>
+<p>&#x4ED6;&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x975E;&#x5E38;&#x677E;&#x6563;,&#x662F;&#x4E00;&#x79CD;&#x7C7B;&#x4F3C;&#x4E8E;JSON&#x7684;&#x683C;&#x5F0F;&#x53EB;BSON,&#x6240;&#x4EE5;&#x5B83;&#x65E2;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;,&#x6709;&#x76F8;&#x5F53;&#x7684;&#x7075;&#x6D3B;.</p>
+<p>MongoDb&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x6863;,&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x7531;&#x5B57;&#x6BB5;&#x548C;&#x503C;&#x5BF9;(field:value)&#x7EC4;&#x6210;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;.MongoDb&#x6587;&#x6863;&#x7C7B;&#x4F3C;&#x4E8E;JSON&#x5BF9;&#x8C61;,&#x5373;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x8BA4;&#x4E3A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;.&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;&#x5B57;&#x7B26;&#x578B;,&#x5B83;&#x7684;&#x503C;&#x9664;&#x4E86;&#x4F7F;&#x7528;&#x57FA;&#x672C;&#x7684;&#x4E00;&#x4E9B;&#x7C7B;&#x578B;&#x5916;,&#x8FD8;&#x53EF;&#x4EE5;&#x5305;&#x62EC;&#x5176;&#x4ED6;&#x6587;&#x6863;,&#x666E;&#x901A;&#x6570;&#x7EC4;&#x548C;&#x6587;&#x6863;&#x6570;&#x7EC4;.</p>
+<p>-a----         2020/4/30      0:01       57881516 01&#x4E28;&#x8BFE;&#x7A0B;&#x4ECB;&#x7ECD;.mp4
+-a----         2020/4/30      0:06       21805726 02&#x4E28;&#x5185;&#x5BB9;&#x7EFC;&#x8FF0;.mp4
+-a----         2020/4/30      0:14       30375570 03&#x4E28;&#x8BA4;&#x8BC6;&#x6587;&#x6863;&#x6570;&#x636E;&#x5E93;MongoDB.mp4
+-a----         2020/4/30      0:21       33632987 04&#x4E28;MongoDB&#x7279;&#x8272;&#x53CA;&#x4F18;&#x52BF;.mp4
+-a----         2020/4/30      0:31       54049562 05&#x4E28;&#x5B9E;&#x9A8C;&#xFF1A;&#x5B89;&#x88C5;MongoDB.mp4
+-a----         2020/4/30      0:43       51822127 06&#x4E28;MongoDB&#x57FA;&#x672C;&#x64CD;&#x4F5C;.mp4
+-a----         2020/4/30      0:49       32790178 07&#x4E28;&#x5B9E;&#x9A8C;&#xFF1A;HelloWorld&#x7A0B;&#x5E8F;&#x5F00;&#x53D1;.mp4
+-a----         2020/4/30      0:55       32868290 08&#x4E28;&#x805A;&#x5408;&#x67E5;&#x8BE2;.mp4
+-a----         2020/4/30      1:03       48041309 09&#x4E28;&#x5B9E;&#x9A8C;&#xFF1A;&#x805A;&#x5408;&#x67E5;&#x8BE2;.mp4
+-a----         2020/4/30      1:08       27400461 10&#x4E28;&#x590D;&#x5236;&#x96C6;&#x673A;&#x5236;&#x53CA;&#x539F;&#x7406;.mp4
+-a----         2020/4/30      1:17       58653056 11&#x4E28;&#x5B9E;&#x9A8C;&#xFF1A;&#x642D;&#x5EFA;MongoDB&#x590D;&#x5236;&#x96C6;.mp4
+-a----         2020/4/30      1:23       34067852 12&#x4E28;MongoDB&#x5168;&#x5BB6;&#x6876;.mp4</p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">blog.colemak.cn&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2022-03-07 13:25:30
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="第01章_MongoDB再入门12讲/" class="navigation navigation-next navigation-unique" aria-label="Next page: 第01章_MongoDB再入门12讲">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"第01章_MongoDB再入门12讲","level":"1.2","depth":1,"path":"第01章_MongoDB再入门12讲/README.md","ref":"第01章_MongoDB再入门12讲/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"blog.colemak.cn，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://blog.colemak.cn/mongodb/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mongodb","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://blog.colemak.cn/index/gitbook/"}},"gitbook":"3.2.3","description":"mongodb,数据库"},"file":{"path":"README.md","mtime":"2022-03-07T05:25:30.807Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-07T05:41:06.950Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
 </html>
+
