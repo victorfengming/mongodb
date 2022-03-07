@@ -259,4 +259,14 @@ rs0:PRIMARY>
 
 ```
 
+---
 
+连接从节点
+
+```shell
+rs0:SECONDARY> rs.slaveOk()
+# 允许从节点读~
+
+```
+
+![1646639222201](README/1646639222201.png)
