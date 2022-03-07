@@ -898,9 +898,291 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><p></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#mongodb"><b></b>MongoDB</a></li><li><span class="title-icon "></span><a href="#mongo&#x590D;&#x5236;&#x96C6;"><b></b>mongo&#x590D;&#x5236;&#x96C6;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5178;&#x578B;&#x590D;&#x5236;&#x96C6;&#x7ED3;&#x6784;"><b></b>&#x5178;&#x578B;&#x590D;&#x5236;&#x96C6;&#x7ED3;&#x6784;</a></li><li><span class="title-icon "></span><a href="#&#x6570;&#x636E;&#x5982;&#x4F55;&#x590D;&#x5236;&#x7684;"><b></b>&#x6570;&#x636E;&#x5982;&#x4F55;&#x590D;&#x5236;&#x7684;</a></li><li><span class="title-icon "></span><a href="#&#x901A;&#x8FC7;&#x9009;&#x4E3E;&#x5B8C;&#x6210;&#x6545;&#x969C;&#x6062;&#x590D;"><b></b>&#x901A;&#x8FC7;&#x9009;&#x4E3E;&#x5B8C;&#x6210;&#x6545;&#x969C;&#x6062;&#x590D;</a></li><li><span class="title-icon "></span><a href="#&#x5F71;&#x54CD;&#x9009;&#x4E3E;&#x7684;&#x56E0;&#x7D20;"><b></b>&#x5F71;&#x54CD;&#x9009;&#x4E3E;&#x7684;&#x56E0;&#x7D20;</a></li><li><span class="title-icon "></span><a href="#&#x5E38;&#x89C1;&#x9009;&#x9879;"><b></b>&#x5E38;&#x89C1;&#x9009;&#x9879;</a></li><li><span class="title-icon "></span><a href="#&#x590D;&#x5236;&#x96C6;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><b></b>&#x590D;&#x5236;&#x96C6;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</a></li></ul><li><span class="title-icon "></span><a href="#mongodb&#x96C6;&#x7FA4;&#x642D;&#x5EFA;"><b></b>mongodb&#x96C6;&#x7FA4;&#x642D;&#x5EFA;</a></li></ul></div><a href="#mongodb" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="mongodb"><a name="mongodb" class="anchor-navigation-ex-anchor" href="#mongodb"><i class="fa fa-link" aria-hidden="true"></i></a>MongoDB</h1>
+<p>MongoDB&#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;,&#x9AD8;&#x6027;&#x80FD;,&#x65E0;&#x6A21;&#x5F0F;&#x7684;&#x6587;&#x6863;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x5E93;,&#x5F53;&#x521D;&#x8BBE;&#x8BA1;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x662F;&#x7528;&#x4E8E;&#x7B80;&#x5316;&#x5F00;&#x53D1;&#x548C;&#x65B9;&#x4FBF;&#x6269;&#x5C55;,&#x662F;NoSQL&#x4E2D;&#x6700;&#x50CF;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;(Mysql)&#x7684;&#x8D39;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;.</p>
+<p>&#x4ED6;&#x652F;&#x6301;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x975E;&#x5E38;&#x677E;&#x6563;,&#x662F;&#x4E00;&#x79CD;&#x7C7B;&#x4F3C;&#x4E8E;JSON&#x7684;&#x683C;&#x5F0F;&#x53EB;BSON,&#x6240;&#x4EE5;&#x5B83;&#x65E2;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x6BD4;&#x8F83;&#x590D;&#x6742;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;,&#x6709;&#x76F8;&#x5F53;&#x7684;&#x7075;&#x6D3B;.</p>
+<p>MongoDb&#x4E2D;&#x7684;&#x8BB0;&#x5F55;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x6863;,&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x7531;&#x5B57;&#x6BB5;&#x548C;&#x503C;&#x5BF9;(field:value)&#x7EC4;&#x6210;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;.MongoDb&#x6587;&#x6863;&#x7C7B;&#x4F3C;&#x4E8E;JSON&#x5BF9;&#x8C61;,&#x5373;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x8BA4;&#x4E3A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;.&#x5B57;&#x6BB5;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;&#x5B57;&#x7B26;&#x578B;,&#x5B83;&#x7684;&#x503C;&#x9664;&#x4E86;&#x4F7F;&#x7528;&#x57FA;&#x672C;&#x7684;&#x4E00;&#x4E9B;&#x7C7B;&#x578B;&#x5916;,&#x8FD8;&#x53EF;&#x4EE5;&#x5305;&#x62EC;&#x5176;&#x4ED6;&#x6587;&#x6863;,&#x666E;&#x901A;&#x6570;&#x7EC4;&#x548C;&#x6587;&#x6863;&#x6570;&#x7EC4;.</p>
+<p>&#x542F;&#x52A8; mongo &#x5BA2;&#x6237;&#x7AEF;</p>
+<p>./mongo</p>
+<p>&#x67E5;&#x770B;</p>
+<pre class="language-"><code class="lang-Bash">db.comment.find()
+</code></pre>
+<p>&#x65B0;&#x589E;</p>
+<pre class="language-"><code class="lang-Bash">db.comment.insertMany([{&quot;_id&quot;:&quot;1&quot;,&quot;articleid&quot;:&quot;100001&quot;,&quot;content&quot;:&quot;&#x6211;&#x4EEC;&#x4E0D;&#x5E94;&#x8BE5;&#x628A;&#x6E05;&#x6668;&#x6D6A;&#x8D39;&#x5728;&#x624B;&#x673A;&#x4E0A;&#xFF0C;&#x5065;&#x5EB7;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x4E00;&#x676F;&#x6E29;&#x6C34;&#x5E78;&#x798F;&#x4F60;&#x6211;&#x4ED6;&#x3002;&quot;,&quot;userid&quot;:&quot;1002&quot;,&quot;nickname&quot;:&quot;&#x76F8;&#x5FD8;&#x4E8E;&#x6C5F;&#x6E56;&quot;,&quot;createdatetime&quot;:new Date(&quot;2019-08-05T22:08:15.522Z&quot;),&quot;likenum&quot;:NumberInt(1000),&quot;state&quot;:&quot;1&quot;},{&quot;_id&quot;:&quot;2&quot;,&quot;articleid&quot;:&quot;100001&quot;,&quot;content&quot;:&quot;&#x6211;&#x590F;&#x5929;&#x7A7A;&#x8179;&#x559D;&#x51C9;&#x5F00;&#x6C34;&#xFF0C;&#x51AC;&#x5929;&#x559D;&#x6E29;&#x5F00;&#x6C34;&quot;,&quot;userid&quot;:&quot;1005&quot;,&quot;nickname&quot;:&quot;&#x4F0A;&#x4EBA;&#x6194;&#x60B4;&quot;,&quot;createdatetime&quot;:new Date(&quot;2019-08-05T23:58:51.485Z&quot;),&quot;likenum&quot;:NumberInt(888),&quot;state&quot;:&quot;1&quot;},{&quot;_id&quot;:&quot;3&quot;,&quot;articleid&quot;:&quot;100001&quot;,&quot;content&quot;:&quot;&#x6211;&#x4E00;&#x76F4;&#x559D;&#x51C9;&#x5F00;&#x6C34;&#xFF0C;&#x51AC;&#x5929;&#x590F;&#x5929;&#x90FD;&#x559D;&#x3002;&quot;,&quot;userid&quot;:&quot;1004&quot;,&quot;nickname&quot;:&quot;&#x6770;&#x514B;&#x8239;&#x957F;&quot;,&quot;createdatetime&quot;:new Date(&quot;2019-08-06T01:05:06.321Z&quot;),&quot;likenum&quot;:NumberInt(666),&quot;state&quot;:&quot;1&quot;},{&quot;_id&quot;:&quot;4&quot;,&quot;articleid&quot;:&quot;100001&quot;,&quot;content&quot;:&quot;&#x4E13;&#x5BB6;&#x8BF4;&#x4E0D;&#x80FD;&#x7A7A;&#x8179;&#x5403;&#x996D;&#xFF0C;&#x5F71;&#x54CD;&#x5065;&#x5EB7;&#x3002;&quot;,&quot;userid&quot;:&quot;1003&quot;,&quot;nickname&quot;:&quot;&#x51EF;&#x6492;&quot;,&quot;createdatetime&quot;:new Date(&quot;2019-08-06T08:18:35.288Z&quot;),&quot;likenum&quot;:NumberInt(2000),&quot;state&quot;:&quot;1&quot;},{&quot;_id&quot;:&quot;5&quot;,&quot;articleid&quot;:&quot;100001&quot;,&quot;content&quot;:&quot;&#x7814;&#x7A76;&#x8868;&#x660E;&#xFF0C;&#x521A;&#x70E7;&#x5F00;&#x7684;&#x6C34;&#x5343;&#x4E07;&#x4E0D;&#x80FD;&#x559D;&#xFF0C;&#x56E0;&#x4E3A;&#x70EB;&#x5634;&#x3002;&quot;,&quot;userid&quot;:&quot;1003&quot;,&quot;nickname&quot;:&quot;&#x51EF;&#x6492;&quot;,&quot;createdatetime&quot;:new Date(&quot;2019-08-06T11:01:02.521Z&quot;),&quot;likenum&quot;:NumberInt(3000),&quot;state&quot;:&quot;1&quot;}]);
+</code></pre>
+<h1 id="mongo&#x590D;&#x5236;&#x96C6;"><a name="mongo&#x590D;&#x5236;&#x96C6;" class="anchor-navigation-ex-anchor" href="#mongo&#x590D;&#x5236;&#x96C6;"><i class="fa fa-link" aria-hidden="true"></i></a>mongo&#x590D;&#x5236;&#x96C6;</h1>
+<hr>
+<h2 id="&#x5178;&#x578B;&#x590D;&#x5236;&#x96C6;&#x7ED3;&#x6784;"><a name="&#x5178;&#x578B;&#x590D;&#x5236;&#x96C6;&#x7ED3;&#x6784;" class="anchor-navigation-ex-anchor" href="#&#x5178;&#x578B;&#x590D;&#x5236;&#x96C6;&#x7ED3;&#x6784;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5178;&#x578B;&#x590D;&#x5236;&#x96C6;&#x7ED3;&#x6784;</h2>
+<p>&#x4E00;&#x4E2A;&#x5178;&#x578B;&#x7684;&#x590D;&#x5236;&#x96C6;&#x7531;3&#x4E2A;&#x4EE5;&#x4E0A;&#x5177;&#x6709;&#x6295;&#x7968;&#x6743;&#x7684;&#x8282;&#x70B9;&#x7EC4;&#x6210;,&#x5305;&#x62EC;:</p>
+<ul>
+<li>&#x4E00;&#x4E2A;&#x4E3B;&#x8282;&#x70B9;(PRIMARY):&#x63A5;&#x53D7;&#x5199;&#x5165;&#x64CD;&#x4F5C;&#x548C;&#x9009;&#x4E3E;&#x65F6;&#x6295;&#x7968;</li>
+<li>&#x4E24;&#x4E2A;(&#x6216;&#x591A;&#x4E2A;)&#x4ECE;&#x8282;&#x70B9;(SECONDARY): &#x590D;&#x5236;&#x4E3B;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x65B0;&#x6570;&#x636E;&#x548C;&#x9009;&#x4E3E;&#x65F6;&#x6295;&#x7968;</li>
+<li>&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;Arbiter(&#x6295;&#x7968;&#x8282;&#x70B9;)</li>
+</ul>
+<p><a href="image/Screenshot_20220306_000101.jpg" data-lightbox="a4fe8480-3c2e-49e5-b784-714e0ff9f0f6" data-title=""><img src="image/Screenshot_20220306_000101.jpg" alt=""></a></p>
+<h2 id="&#x6570;&#x636E;&#x5982;&#x4F55;&#x590D;&#x5236;&#x7684;"><a name="&#x6570;&#x636E;&#x5982;&#x4F55;&#x590D;&#x5236;&#x7684;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x5982;&#x4F55;&#x590D;&#x5236;&#x7684;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x636E;&#x5982;&#x4F55;&#x590D;&#x5236;&#x7684;</h2>
+<ul>
+<li>&#x5F53;&#x4E00;&#x4E2A;&#x4FEE;&#x6539;&#x64CD;&#x4F5C;,&#x65E0;&#x8BBA;&#x662F;&#x63D2;&#x5165;,&#x66F4;&#x65B0;&#x6216;&#x5220;&#x9664;,&#x5230;&#x8FBE;&#x4E3B;&#x8282;&#x70B9;&#x65F6;,&#x5B83;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#x5C06;&#x88AB;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;(&#x7ECF;&#x8FC7;&#x4E00;&#x4E9B;&#x5FC5;&#x8981;&#x7684;&#x8F6C;&#x6362;),&#x8FD9;&#x4E9B;&#x8BB0;&#x5F55;&#x79F0;&#x4E3A;oplog.</li>
+<li>&#x4ECE;&#x8282;&#x70B9;&#x901A;&#x8FC7;&#x5728;&#x4E3B;&#x8282;&#x70B9;&#x4E0A;&#x6253;&#x5F00;&#x4E00;&#x4E2A;tailable&#x6E38;&#x6807;&#x4E0D;&#x65AD;&#x83B7;&#x53D6;&#x65B0;&#x8FDB;&#x5165;&#x4E3B;&#x8282;&#x70B9;&#x7684;oplog,&#x5E76;&#x5728;&#x81EA;&#x5DF1;&#x7684;&#x6570;&#x636E;&#x4E0A;&#x56DE;&#x653E;,&#x4ECE;&#x6B64;&#x4FDD;&#x6301;&#x8DDF;&#x4E3B;&#x8282;&#x70B9;&#x7684;&#x6570;&#x636E;&#x4E00;&#x81F4;.</li>
+<li></li>
+</ul>
+<p><a href="image/Screenshot_20220306_000644.jpg" data-lightbox="668a475f-b364-40f4-9b06-8ed6cc1c6c47" data-title=""><img src="image/Screenshot_20220306_000644.jpg" alt=""></a></p>
+<h2 id="&#x901A;&#x8FC7;&#x9009;&#x4E3E;&#x5B8C;&#x6210;&#x6545;&#x969C;&#x6062;&#x590D;"><a name="&#x901A;&#x8FC7;&#x9009;&#x4E3E;&#x5B8C;&#x6210;&#x6545;&#x969C;&#x6062;&#x590D;" class="anchor-navigation-ex-anchor" href="#&#x901A;&#x8FC7;&#x9009;&#x4E3E;&#x5B8C;&#x6210;&#x6545;&#x969C;&#x6062;&#x590D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x901A;&#x8FC7;&#x9009;&#x4E3E;&#x5B8C;&#x6210;&#x6545;&#x969C;&#x6062;&#x590D;</h2>
+<ul>
+<li>&#x5177;&#x6709;&#x6295;&#x7968;&#x6743;&#x7684;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x4E24;&#x4E24;&#x4E92;&#x76F8;&#x53D1;&#x9001;&#x5FC3;&#x8DF3;</li>
+<li>&#x5F53;5&#x6B21;&#x5FC3;&#x8DF3;&#x672A;&#x6536;&#x5230;&#x65F6;&#x5224;&#x65AD;&#x4E3A;&#x8282;&#x70B9;&#x5931;&#x8054;</li>
+<li>&#x5982;&#x679C;&#x5931;&#x8054;&#x7684;&#x662F;&#x4E3B;&#x8282;&#x70B9;,&#x4ECE;&#x8282;&#x70B9;&#x4F1A;&#x53D1;&#x751F;&#x9009;&#x4E3E;,&#x9009;&#x51FA;&#x65B0;&#x7684;&#x4E3B;&#x8282;&#x70B9;;</li>
+<li>&#x5982;&#x679C;&#x5931;&#x8054;&#x7684;&#x662F;&#x4ECE;&#x8282;&#x70B9;&#x5219;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x65B0;&#x7684;&#x9009;&#x4E3E;</li>
+<li>&#x9009;&#x4E3E;&#x57FA;&#x4E8E;<strong>RAFT&#x4E00;&#x81F4;&#x6027;&#x7B97;&#x6CD5;</strong>&#x5B9E;&#x73B0;,&#x9009;&#x4E3E;&#x6210;&#x529F;&#x7684;&#x5FC5;&#x8981;&#x6761;&#x4EF6;&#x662F;&#x5927;&#x591A;&#x6570;&#x6295;&#x7968;&#x8282;&#x70B9;&#x5B58;&#x6D3B;;</li>
+<li>&#x590D;&#x5236;&#x96C6;&#x4E2D;&#x6700;&#x591A;&#x53EF;&#x4EE5;&#x6709;50&#x4E2A;&#x8282;&#x70B9;,&#x4F46;&#x5177;&#x6709;&#x6295;&#x7968;&#x6743;&#x7684;&#x8282;&#x70B9;&#x6700;&#x591A;7&#x4E2A;</li>
+<li></li>
+</ul>
+<p><a href="image/Screenshot_20220306_001410.jpg" data-lightbox="80cd64c0-02ce-4d10-a0ec-5a761d357946" data-title=""><img src="image/Screenshot_20220306_001410.jpg" alt=""></a></p>
+<pre class="language-"><code class="lang-YAML">`&#x8FD9;&#x4E2A;&#x9009;&#x4E3E;&#x975E;&#x5E38;&#x91CD;&#x8981;`
+</code></pre>
+<h2 id="&#x5F71;&#x54CD;&#x9009;&#x4E3E;&#x7684;&#x56E0;&#x7D20;"><a name="&#x5F71;&#x54CD;&#x9009;&#x4E3E;&#x7684;&#x56E0;&#x7D20;" class="anchor-navigation-ex-anchor" href="#&#x5F71;&#x54CD;&#x9009;&#x4E3E;&#x7684;&#x56E0;&#x7D20;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F71;&#x54CD;&#x9009;&#x4E3E;&#x7684;&#x56E0;&#x7D20;</h2>
+<ul>
+<li>&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x5FC5;&#x987B;&#x6709;&#x5927;&#x591A;&#x6570;&#x8282;&#x70B9;&#x5B58;&#x6D3B;;</li>
+<li>&#x88AB;&#x9009;&#x4E3E;&#x4E3A;&#x4E3B;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#x5FC5;&#x987B;:<ul>
+<li>&#x80FD;&#x591F;&#x4E0E;&#x591A;&#x6570;&#x8282;&#x70B9;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;</li>
+<li>&#x5177;&#x6709;&#x8F83;&#x65B0;&#x7684;oplog</li>
+<li>&#x5177;&#x6709;&#x8F83;&#x9AD8;&#x7684;&#x4F18;&#x5148;&#x7EA7;(&#x5982;&#x679C;&#x6709;&#x914D;&#x7F6E;)</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x5E38;&#x89C1;&#x9009;&#x9879;"><a name="&#x5E38;&#x89C1;&#x9009;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x89C1;&#x9009;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x89C1;&#x9009;&#x9879;</h2>
+<ul>
+<li><p>&#x590D;&#x5236;&#x96C6;&#x8282;&#x70B9;&#x6709;&#x4EE5;&#x4E0B;&#x5E38;&#x89C1;&#x7684;&#x9009;&#x914D;&#x9879;:</p>
+<ul>
+<li>&#x662F;&#x5426;&#x5177;&#x6709;&#x6295;&#x7968;&#x6743;(v &#x53C2;&#x6570;):&#x6709;&#x5219;&#x53C2;&#x4E0E;&#x6295;&#x7968;;</li>
+<li>&#x4F18;&#x5148;&#x7EA7;(priority&#x53C2;&#x6570;): &#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;&#x7684;&#x8282;&#x70B9;&#x8D8A;&#x4F18;&#x5148;&#x6210;&#x4E3A;&#x4E3B;&#x8282;&#x70B9;.&#x4F18;&#x5148;&#x7EA7;&#x4E3A;0&#x7684;&#x8282;&#x70B9;&#x65E0;&#x6CD5;&#x6210;&#x4E3A;&#x4E3B;&#x8282;&#x70B9;</li>
+<li>&#x9690;&#x85CF;(hidden&#x53C2;&#x6570;): &#x590D;&#x5236;&#x6570;&#x636E;,&#x4F46;&#x5BF9;&#x5E94;&#x7528;&#x4E0D;&#x53EF;&#x89C1;.&#x9690;&#x85CF;&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x5177;&#x6709;&#x6295;&#x7968;&#x6743;,&#x4F46;&#x4F18;&#x5148;&#x7EA7;&#x5FC5;&#x987B;&#x4E3A;0;</li>
+<li><p>&#x5EF6;&#x8FDF;(slaveDelay&#x53C2;&#x6570;): &#x590D;&#x5236;n&#x79D2;&#x4E4B;&#x524D;&#x7684;&#x6570;&#x636E;,&#x4FDD;&#x6301;&#x4E0E;&#x4E3B;&#x8282;&#x70B9;&#x7684;&#x65F6;&#x95F4;&#x5DEE;.</p>
+<p><a href="image/Screenshot_20220306_002923.jpg" data-lightbox="6464d677-e8fe-40dc-add3-015efe82185c" data-title=""><img src="image/Screenshot_20220306_002923.jpg" alt=""></a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x590D;&#x5236;&#x96C6;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><a name="&#x590D;&#x5236;&#x96C6;&#x6CE8;&#x610F;&#x4E8B;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x590D;&#x5236;&#x96C6;&#x6CE8;&#x610F;&#x4E8B;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x590D;&#x5236;&#x96C6;&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h2>
+<ul>
+<li>&#x5173;&#x4E8E;&#x786C;&#x4EF6;:<ul>
+<li>&#x56E0;&#x4E3A;&#x6B63;&#x5E38;&#x7684;&#x590D;&#x5236;&#x96C6;&#x8282;&#x70B9;&#x90FD;&#x6709;&#x53EF;&#x80FD;&#x6210;&#x4E3A;&#x4E3B;&#x8282;&#x70B9;,&#x4ED6;&#x4EEC;&#x7684;&#x5730;&#x4F4D;&#x662F;&#x4E00;&#x6837;&#x7684;,&#x56E0;&#x6B64;&#x786C;&#x4EF6;&#x914D;&#x7F6E;&#x4E0A;&#x5FC5;&#x987B;&#x4E00;&#x81F4;;</li>
+<li>&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x8282;&#x70B9;&#x4E0D;&#x4F1A;&#x540C;&#x65F6;&#x5B95;&#x673A;,&#x5404;&#x4E2A;&#x8282;&#x70B9;&#x4F7F;&#x7528;&#x7684;&#x786C;&#x4EF6;&#x5FC5;&#x987B;&#x5177;&#x6709;&#x72EC;&#x7ACB;&#x6027;.</li>
+</ul>
+</li>
+<li>&#x5173;&#x4E8E;&#x8F6F;&#x4EF6;:<ul>
+<li>&#x590D;&#x5236;&#x96C6;&#x8282;&#x70B9;&#x8F6F;&#x4EF6;&#x7248;&#x672C;&#x5FC5;&#x987B;&#x4E00;&#x81F4;,&#x4EE5;&#x907F;&#x514D;&#x51FA;&#x73B0;&#x4E0D;&#x53EF;&#x9884;&#x77E5;&#x95EE;&#x9898;.</li>
+</ul>
+</li>
+<li><strong>&#x589E;&#x52A0;&#x8282;&#x70B9;&#x4E0D;&#x4F1A;&#x589E;&#x52A0;&#x7CFB;&#x7EDF;&#x5199;&#x6027;&#x80FD;!</strong></li>
+</ul>
+<h1 id="mongodb&#x96C6;&#x7FA4;&#x642D;&#x5EFA;"><a name="mongodb&#x96C6;&#x7FA4;&#x642D;&#x5EFA;" class="anchor-navigation-ex-anchor" href="#mongodb&#x96C6;&#x7FA4;&#x642D;&#x5EFA;"><i class="fa fa-link" aria-hidden="true"></i></a>mongodb&#x96C6;&#x7FA4;&#x642D;&#x5EFA;</h1>
+<h3 id="1-&#x51C6;&#x5907;"><a name="1-&#x51C6;&#x5907;" class="anchor-navigation-ex-anchor" href="#1-&#x51C6;&#x5907;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x51C6;&#x5907;</h3>
+<p><a href="image/image.png" data-lightbox="2421285e-5de6-4f1f-b3d7-23064e962263" data-title=""><img src="image/image.png" alt=""></a></p>
+<h3 id="2-&#x521B;&#x5EFA;&#x6570;&#x636E;&#x76EE;&#x5F55;"><a name="2-&#x521B;&#x5EFA;&#x6570;&#x636E;&#x76EE;&#x5F55;" class="anchor-navigation-ex-anchor" href="#2-&#x521B;&#x5EFA;&#x6570;&#x636E;&#x76EE;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x521B;&#x5EFA;&#x6570;&#x636E;&#x76EE;&#x5F55;</h3>
+<p><a href="image/image_1.png" data-lightbox="ac9daf1f-b277-47bc-b755-3df91cc01044" data-title=""><img src="image/image_1.png" alt=""></a></p>
+<pre class="language-"><code class="lang-Bash">cd /opt/app/mongodb-linux-x86_64-rhel70-5.0.6
+mkdir -p data/db{1,2,3}
+</code></pre>
+<p>&#x67E5;&#x770B;</p>
+<pre class="language-"><code class="lang-Bash">[root@VM-16-16-centos mongodb-linux-x86_64-rhel70-5.0.6]# cd data/
+[root@VM-16-16-centos data]# ls
+db  db1  db2  db3
+[root@VM-16-16-centos data]# pwd
+/opt/app/mongodb-linux-x86_64-rhel70-5.0.6/data
+</code></pre>
+<h3 id="3-&#x51C6;&#x5907;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><a name="3-&#x51C6;&#x5907;&#x914D;&#x7F6E;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#3-&#x51C6;&#x5907;&#x914D;&#x7F6E;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x51C6;&#x5907;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
+<p><a href="image/image_2.png" data-lightbox="dd2aa204-29f2-476b-9afa-494feb093bf7" data-title=""><img src="image/image_2.png" alt=""></a></p>
+<p><a href="image/image_3.png" data-lightbox="c09653aa-a2b5-4549-b148-ae858b4d230b" data-title=""><img src="image/image_3.png" alt=""></a></p>
+<pre class="language-"><code class="lang-Bash">[root@VM-16-16-centos db1]# cat mongod.conf
+systemLog:
+        destination: file
+        path: /opt/app/mongodb-linux-x86_64-rhel70-5.0.6/data/db1/mongod.log
+        logAppend: true
+storage:
+        dbPath: /opt/app/mongodb-linux-x86_64-rhel70-5.0.6/data/db1
+net:
+        bindIp: 0.0.0.0
+        port: 28017
+replication:
+        replSetName: rs0
+processManagement
+        fork: true
+[root@VM-16-16-centos db1]#
+</code></pre>
+<p><a href="image/Screenshot_20220307_110405.jpg" data-lightbox="70710ed9-c686-4831-ad86-f6c583b76675" data-title=""><img src="image/Screenshot_20220307_110405.jpg" alt=""></a></p>
+<h3 id="4-&#x542F;&#x52A8;mongodb&#x8FDB;&#x7A0B;"><a name="4-&#x542F;&#x52A8;mongodb&#x8FDB;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#4-&#x542F;&#x52A8;mongodb&#x8FDB;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x542F;&#x52A8;mongodb&#x8FDB;&#x7A0B;</h3>
+<p><a href="image/image_4.png" data-lightbox="8c51e4ec-6e68-4c84-9c3b-70812aab1c09" data-title=""><img src="image/image_4.png" alt=""></a></p>
+<pre class="language-"><code class="lang-Bash">&quot;data/db2/mongod.conf&quot; 13L, 292C written
+[root@VM-16-16-centos mongodb-linux-x86_64-rhel70-5.0.6]# 
+[root@VM-16-16-centos mongodb-linux-x86_64-rhel70-5.0.6]# ./bin/mongod -f data/db2/mongod.conf 
+about to fork child process, waiting until server is ready for connections.
+forked process: 13193
+child process started successfully, parent exiting
+[root@VM-16-16-centos mongodb-linux-x86_64-rhel70-5.0.6]# ./bin/mongod -f data/db3/mongod.conf 
+about to fork child process, waiting until server is ready for connections.
+forked process: 13266
+child process started successfully, parent exiting
+[root@VM-16-16-centos mongodb-linux-x86_64-rhel70-5.0.6]# ps -ef|grep mongo
+root     11394  4673  0 11:07 pts/0    00:00:00 vi db2/mongod.log
+root     11840  4673  0 11:09 pts/0    00:00:00 vi data/db1/mongod.conf
+root     12592     1  1 11:12 ?        00:00:01 ./bin/mongod -f data/db1/mongod.conf
+root     13193     1  4 11:14 ?        00:00:00 ./bin/mongod -f data/db2/mongod.conf
+root     13266     1  8 11:14 ?        00:00:00 ./bin/mongod -f data/db3/mongod.conf
+root     13353  4673  0 11:14 pts/0    00:00:00 grep --color=auto mongo
+root     29502     1  0 Mar03 ?        00:18:24 ./bin/mongod -f ./config/mongod.conf
+[root@VM-16-16-centos mongodb-linux-x86_64-rhel70-5.0.6]#
+</code></pre>
+<pre class="language-"><code class="lang-Bash">[root@VM-16-16-centos mongodb-linux-x86_64-rhel70-5.0.6]# cat data/db2/mongod.conf 
+systemLog:
+  destination: file
+  path: /opt/app/mongodb-linux-x86_64-rhel70-5.0.6/data/db2/mongod.log
+  logAppend: true
+storage:
+  dbPath: /opt/app/mongodb-linux-x86_64-rhel70-5.0.6/data/db2
+net:
+  bindIp: 0.0.0.0
+  port: 28018
+replication:
+  replSetName: rs0
+processManagement:
+  fork: true
+[root@VM-16-16-centos mongodb-linux-x86_64-rhel70-5.0.6]#
+</code></pre>
+<h3 id="5-&#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;"><a name="5-&#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;" class="anchor-navigation-ex-anchor" href="#5-&#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x914D;&#x7F6E;&#x590D;&#x5236;&#x96C6;</h3>
+<p><a href="image/image_5.png" data-lightbox="860f5654-e06e-4ada-b8c7-782ef9ff92aa" data-title=""><img src="image/image_5.png" alt=""></a></p>
+<pre class="language-"><code class="lang-Bash">[root@VM-16-16-centos mongodb-linux-x86_64-rhel70-5.0.6]# hostname -f
+VM-16-16-centos
+[root@VM-16-16-centos mongodb-linux-x86_64-rhel70-5.0.6]#
+</code></pre>
+<pre class="language-"><code class="lang-Bash">rs0:PRIMARY&gt; rs.status()
+{
+        &quot;set&quot; : &quot;rs0&quot;,
+        &quot;date&quot; : ISODate(&quot;2022-03-07T05:07:56.558Z&quot;),
+        &quot;myState&quot; : 1,
+        &quot;term&quot; : NumberLong(1),
+        &quot;syncSourceHost&quot; : &quot;&quot;,
+        &quot;syncSourceId&quot; : -1,
+        &quot;heartbeatIntervalMillis&quot; : NumberLong(2000),
+        &quot;majorityVoteCount&quot; : 1,
+        &quot;writeMajorityCount&quot; : 1,
+        &quot;votingMembersCount&quot; : 1,
+        &quot;writableVotingMembersCount&quot; : 1,
+        &quot;optimes&quot; : {
+                &quot;lastCommittedOpTime&quot; : {
+                        &quot;ts&quot; : Timestamp(1646629671, 1),
+                        &quot;t&quot; : NumberLong(1)
+                },
+                &quot;lastCommittedWallTime&quot; : ISODate(&quot;2022-03-07T05:07:51.664Z&quot;),
+                &quot;readConcernMajorityOpTime&quot; : {
+                        &quot;ts&quot; : Timestamp(1646629671, 1),
+                        &quot;t&quot; : NumberLong(1)
+                },
+                &quot;appliedOpTime&quot; : {
+                        &quot;ts&quot; : Timestamp(1646629671, 1),
+                        &quot;t&quot; : NumberLong(1)
+                },
+                &quot;durableOpTime&quot; : {
+                        &quot;ts&quot; : Timestamp(1646629671, 1),
+                        &quot;t&quot; : NumberLong(1)
+                },
+                &quot;lastAppliedWallTime&quot; : ISODate(&quot;2022-03-07T05:07:51.664Z&quot;),
+                &quot;lastDurableWallTime&quot; : ISODate(&quot;2022-03-07T05:07:51.664Z&quot;)
+        },
+        &quot;lastStableRecoveryTimestamp&quot; : Timestamp(1646629633, 1),
+        &quot;electionCandidateMetrics&quot; : {
+                &quot;lastElectionReason&quot; : &quot;electionTimeout&quot;,
+                &quot;lastElectionDate&quot; : ISODate(&quot;2022-03-07T03:25:11.410Z&quot;),
+                &quot;electionTerm&quot; : NumberLong(1),
+                &quot;lastCommittedOpTimeAtElection&quot; : {
+                        &quot;ts&quot; : Timestamp(1646623511, 1),
+                        &quot;t&quot; : NumberLong(-1)
+                },
+                &quot;lastSeenOpTimeAtElection&quot; : {
+                        &quot;ts&quot; : Timestamp(1646623511, 1),
+                        &quot;t&quot; : NumberLong(-1)
+                },
+                &quot;numVotesNeeded&quot; : 1,
+                &quot;priorityAtElection&quot; : 1,
+                &quot;electionTimeoutMillis&quot; : NumberLong(10000),
+                &quot;newTermStartDate&quot; : ISODate(&quot;2022-03-07T03:25:11.451Z&quot;),
+                &quot;wMajorityWriteAvailabilityDate&quot; : ISODate(&quot;2022-03-07T03:25:11.474Z&quot;)
+        },
+        &quot;members&quot; : [
+                {
+                        &quot;_id&quot; : 0,
+                        &quot;name&quot; : &quot;VM-16-16-centos:28017&quot;,
+                        &quot;health&quot; : 1,
+                        &quot;state&quot; : 1,
+                        &quot;stateStr&quot; : &quot;PRIMARY&quot;,
+                        &quot;uptime&quot; : 6944,
+                        &quot;optime&quot; : {
+                                &quot;ts&quot; : Timestamp(1646629671, 1),
+                                &quot;t&quot; : NumberLong(1)
+                        },
+                        &quot;optimeDate&quot; : ISODate(&quot;2022-03-07T05:07:51Z&quot;),
+                        &quot;lastAppliedWallTime&quot; : ISODate(&quot;2022-03-07T05:07:51.664Z&quot;),
+                        &quot;lastDurableWallTime&quot; : ISODate(&quot;2022-03-07T05:07:51.664Z&quot;),
+                        &quot;syncSourceHost&quot; : &quot;&quot;,
+                        &quot;syncSourceId&quot; : -1,
+                        &quot;infoMessage&quot; : &quot;&quot;,
+                        &quot;electionTime&quot; : Timestamp(1646623511, 2),
+                        &quot;electionDate&quot; : ISODate(&quot;2022-03-07T03:25:11Z&quot;),
+                        &quot;configVersion&quot; : 1,
+                        &quot;configTerm&quot; : 1,
+                        &quot;self&quot; : true,
+                        &quot;lastHeartbeatMessage&quot; : &quot;&quot;
+                }
+        ],
+        &quot;ok&quot; : 1,
+        &quot;$clusterTime&quot; : {
+                &quot;clusterTime&quot; : Timestamp(1646629671, 1),
+                &quot;signature&quot; : {
+                        &quot;hash&quot; : BinData(0,&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;),
+                        &quot;keyId&quot; : NumberLong(0)
+                }
+        },
+        &quot;operationTime&quot; : Timestamp(1646629671, 1)
+}
+rs0:PRIMARY&gt;
+</code></pre>
+<blockquote>
+<p>members&#x8868;&#x793A;&#x6570;&#x7EC4;,&#x662F;&#x53EF;&#x4EE5;&#x5355;&#x8282;&#x70B9;&#x652F;&#x6301;&#x7684;,</p>
+</blockquote>
+<p>&#x52A0;&#x5165;&#x5176;&#x4ED6;&#x8282;&#x70B9;</p>
+<pre class="language-"><code class="lang-Bash">rs0:PRIMARY&gt; rs.add(&quot;VM-16-16-centos:28018&quot;)
+{
+        &quot;ok&quot; : 1,
+        &quot;$clusterTime&quot; : {
+                &quot;clusterTime&quot; : Timestamp(1646629839, 1),
+                &quot;signature&quot; : {
+                        &quot;hash&quot; : BinData(0,&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;),
+                        &quot;keyId&quot; : NumberLong(0)
+                }
+        },
+        &quot;operationTime&quot; : Timestamp(1646629839, 1)
+}
+rs0:PRIMARY&gt; rs.add(&quot;VM-16-16-centos:28019&quot;)
+{
+        &quot;ok&quot; : 1,
+        &quot;$clusterTime&quot; : {
+                &quot;clusterTime&quot; : Timestamp(1646629846, 1),
+                &quot;signature&quot; : {
+                        &quot;hash&quot; : BinData(0,&quot;AAAAAAAAAAAAAAAAAAAAAAAAAAA=&quot;),
+                        &quot;keyId&quot; : NumberLong(0)
+                }
+        },
+        &quot;operationTime&quot; : Timestamp(1646629846, 1)
+}
+rs0:PRIMARY&gt;
+</code></pre>
+<p>&#x518D;&#x770B;&#x72B6;&#x6001;</p>
+<pre class="language-"><code class="lang-Bash">
+
+</code></pre>
+<p></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
 <footer class="page-footer"><span class="copyright">blog.colemak.cn&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
-2022-03-07 14:00:03
+2022-03-07 13:17:22
 </span></footer></body></html>
 <script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
                                 
@@ -945,7 +1227,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"10_复制集机制及原理","level":"1.2.10","depth":2,"next":{"title":"11_实验：搭建MongoDB复制集","level":"1.2.11","depth":2,"path":"第01章_MongoDB再入门12讲/11_实验：搭建MongoDB复制集/README.md","ref":"第01章_MongoDB再入门12讲/11_实验：搭建MongoDB复制集/README.md","articles":[]},"previous":{"title":"09_实验：聚合查询","level":"1.2.9","depth":2,"path":"第01章_MongoDB再入门12讲/09_实验：聚合查询/README.md","ref":"第01章_MongoDB再入门12讲/09_实验：聚合查询/README.md","articles":[]},"dir":"neutral"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"blog.colemak.cn，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://blog.colemak.cn/mongodb/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mongodb","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://blog.colemak.cn/index/gitbook/"}},"gitbook":"3.2.3","description":"mongodb,数据库"},"file":{"path":"第01章_MongoDB再入门12讲/10_复制集机制及原理/README.md","mtime":"2022-03-07T06:00:03.869Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-07T06:04:27.758Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"10_复制集机制及原理","level":"1.2.10","depth":2,"next":{"title":"11_实验：搭建MongoDB复制集","level":"1.2.11","depth":2,"path":"第01章_MongoDB再入门12讲/11_实验：搭建MongoDB复制集/README.md","ref":"第01章_MongoDB再入门12讲/11_实验：搭建MongoDB复制集/README.md","articles":[]},"previous":{"title":"09_实验：聚合查询","level":"1.2.9","depth":2,"path":"第01章_MongoDB再入门12讲/09_实验：聚合查询/README.md","ref":"第01章_MongoDB再入门12讲/09_实验：聚合查询/README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"blog.colemak.cn，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://blog.colemak.cn/mongodb/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mongodb","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://blog.colemak.cn/index/gitbook/"}},"gitbook":"3.2.3","description":"mongodb,数据库"},"file":{"path":"第01章_MongoDB再入门12讲/10_复制集机制及原理/README.md","mtime":"2022-03-07T05:17:22.882Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-07T06:07:00.914Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
