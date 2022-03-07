@@ -1,0 +1,1008 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>39_高级集群设计：全球多写 · mongodb</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Victor <victorfengming@163.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-ancre-navigation/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism-atom-dark.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../40_MongoDB上线及升级/" />
+    
+    
+    <link rel="prev" href="../38_实验：搭建两地三中心集群/" />
+    
+
+    
+        <link rel="shortcut icon" href='../../img/avator.png.icon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../img/avator.png.icon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://blog.colemak.cn/index/gitbook/" target="_blank" class="custom-link">文档索引页</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    第01章_MongoDB再入门12讲
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../第01章_MongoDB再入门12讲/01_课程介绍/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/01_课程介绍/">
+            
+                    
+                    01_课程介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../第01章_MongoDB再入门12讲/02_内容综述/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/02_内容综述/">
+            
+                    
+                    02_内容综述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../第01章_MongoDB再入门12讲/03_认识文档数据库MongoDB/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/03_认识文档数据库MongoDB/">
+            
+                    
+                    03_认识文档数据库MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../第01章_MongoDB再入门12讲/04_MongoDB特色及优势/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/04_MongoDB特色及优势/">
+            
+                    
+                    04_MongoDB特色及优势
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../第01章_MongoDB再入门12讲/05_实验：安装MongoDB/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/05_实验：安装MongoDB/">
+            
+                    
+                    05_实验：安装MongoDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../第01章_MongoDB再入门12讲/06_MongoDB基本操作/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/06_MongoDB基本操作/">
+            
+                    
+                    06_MongoDB基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../第01章_MongoDB再入门12讲/07_实验：HelloWorld程序开发/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/07_实验：HelloWorld程序开发/">
+            
+                    
+                    07_实验：HelloWorld程序开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../../第01章_MongoDB再入门12讲/08_聚合查询/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/08_聚合查询/">
+            
+                    
+                    08_聚合查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../../第01章_MongoDB再入门12讲/09_实验：聚合查询/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/09_实验：聚合查询/">
+            
+                    
+                    09_实验：聚合查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../../第01章_MongoDB再入门12讲/10_复制集机制及原理/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/10_复制集机制及原理/">
+            
+                    
+                    10_复制集机制及原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../../第01章_MongoDB再入门12讲/11_实验：搭建MongoDB复制集/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/11_实验：搭建MongoDB复制集/">
+            
+                    
+                    11_实验：搭建MongoDB复制集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../../第01章_MongoDB再入门12讲/12_MongoDB全家/">
+            
+                <a href="../../第01章_MongoDB再入门12讲/12_MongoDB全家/">
+            
+                    
+                    12_MongoDB全家
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    第02章_从熟练到精通的开发之路12讲
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../第02章_从熟练到精通的开发之路12讲/13_模型设计基础/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/13_模型设计基础/">
+            
+                    
+                    13_模型设计基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../第02章_从熟练到精通的开发之路12讲/14_JSON文档模型设计特点/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/14_JSON文档模型设计特点/">
+            
+                    
+                    14_JSON文档模型设计特点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../第02章_从熟练到精通的开发之路12讲/15_文档模型设计之一：基础设计/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/15_文档模型设计之一：基础设计/">
+            
+                    
+                    15_文档模型设计之一：基础设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../第02章_从熟练到精通的开发之路12讲/16_文档模型设计之二：工况细化/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/16_文档模型设计之二：工况细化/">
+            
+                    
+                    16_文档模型设计之二：工况细化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../第02章_从熟练到精通的开发之路12讲/17_文档模型设计之三：模式套用/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/17_文档模型设计之三：模式套用/">
+            
+                    
+                    17_文档模型设计之三：模式套用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../第02章_从熟练到精通的开发之路12讲/18_设计模式集锦/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/18_设计模式集锦/">
+            
+                    
+                    18_设计模式集锦
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../第02章_从熟练到精通的开发之路12讲/19_事务开发：写操作事务/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/19_事务开发：写操作事务/">
+            
+                    
+                    19_事务开发：写操作事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../第02章_从熟练到精通的开发之路12讲/20_事务开发：读操作事务之一/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/20_事务开发：读操作事务之一/">
+            
+                    
+                    20_事务开发：读操作事务之一
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../../第02章_从熟练到精通的开发之路12讲/21_事务开发：读操作事务之二/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/21_事务开发：读操作事务之二/">
+            
+                    
+                    21_事务开发：读操作事务之二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../../第02章_从熟练到精通的开发之路12讲/22_事务开发：多文档事务/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/22_事务开发：多文档事务/">
+            
+                    
+                    22_事务开发：多文档事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../../第02章_从熟练到精通的开发之路12讲/24_MongoDB开发最佳实践/">
+            
+                <a href="../../第02章_从熟练到精通的开发之路12讲/24_MongoDB开发最佳实践/">
+            
+                    
+                    24_MongoDB开发最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    第03章_分片集群与高级运维之道16讲
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../25_分片集群机制及原理/">
+            
+                <a href="../25_分片集群机制及原理/">
+            
+                    
+                    25_分片集群机制及原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../26_分片集群设计/">
+            
+                <a href="../26_分片集群设计/">
+            
+                    
+                    26_分片集群设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../27_实验：分片集群搭建及扩容/">
+            
+                <a href="../27_实验：分片集群搭建及扩容/">
+            
+                    
+                    27_实验：分片集群搭建及扩容
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../28_MongoDB监控最佳实践/">
+            
+                <a href="../28_MongoDB监控最佳实践/">
+            
+                    
+                    28_MongoDB监控最佳实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../29_MongoDB备份与恢复/">
+            
+                <a href="../29_MongoDB备份与恢复/">
+            
+                    
+                    29_MongoDB备份与恢复
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../30_备份与恢复操作/">
+            
+                <a href="../30_备份与恢复操作/">
+            
+                    
+                    30_备份与恢复操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../31_MongoDB安全架构/">
+            
+                <a href="../31_MongoDB安全架构/">
+            
+                    
+                    31_MongoDB安全架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../32_MongoDB安全加固实践/">
+            
+                <a href="../32_MongoDB安全加固实践/">
+            
+                    
+                    32_MongoDB安全加固实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../33_MongoDB索引机制（一）/">
+            
+                <a href="../33_MongoDB索引机制（一）/">
+            
+                    
+                    33_MongoDB索引机制（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../34_MongoDB索引机制（二）/">
+            
+                <a href="../34_MongoDB索引机制（二）/">
+            
+                    
+                    34_MongoDB索引机制（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../35_MongoDB读写性能机制/">
+            
+                <a href="../35_MongoDB读写性能机制/">
+            
+                    
+                    35_MongoDB读写性能机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../36_性能诊断工具/">
+            
+                <a href="../36_性能诊断工具/">
+            
+                    
+                    36_性能诊断工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../37_高级集群设计：两地三中心/">
+            
+                <a href="../37_高级集群设计：两地三中心/">
+            
+                    
+                    37_高级集群设计：两地三中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../38_实验：搭建两地三中心集群/">
+            
+                <a href="../38_实验：搭建两地三中心集群/">
+            
+                    
+                    38_实验：搭建两地三中心集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.15" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    39_高级集群设计：全球多写
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../40_MongoDB上线及升级/">
+            
+                <a href="../40_MongoDB上线及升级/">
+            
+                    
+                    40_MongoDB上线及升级
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    第04章_企业架构师进阶之法13讲
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../第04章_企业架构师进阶之法13讲/41_MongoDB应用场景及选型/">
+            
+                <a href="../../第04章_企业架构师进阶之法13讲/41_MongoDB应用场景及选型/">
+            
+                    
+                    41_MongoDB应用场景及选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../第04章_企业架构师进阶之法13讲/42_MongoDB典型案例（一）/">
+            
+                <a href="../../第04章_企业架构师进阶之法13讲/42_MongoDB典型案例（一）/">
+            
+                    
+                    42_MongoDB典型案例（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../第04章_企业架构师进阶之法13讲/43_MongoDB典型案例（二）/">
+            
+                <a href="../../第04章_企业架构师进阶之法13讲/43_MongoDB典型案例（二）/">
+            
+                    
+                    43_MongoDB典型案例（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../第04章_企业架构师进阶之法13讲/44_关系型数据库迁移/">
+            
+                <a href="../../第04章_企业架构师进阶之法13讲/44_关系型数据库迁移/">
+            
+                    
+                    44_关系型数据库迁移
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../第04章_企业架构师进阶之法13讲/45_数据库迁移方式及工具/">
+            
+                <a href="../../第04章_企业架构师进阶之法13讲/45_数据库迁移方式及工具/">
+            
+                    
+                    45_数据库迁移方式及工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../第04章_企业架构师进阶之法13讲/46_Oracle迁移实战/">
+            
+                <a href="../../第04章_企业架构师进阶之法13讲/46_Oracle迁移实战/">
+            
+                    
+                    46_Oracle迁移实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../第04章_企业架构师进阶之法13讲/50_MongoDB与微服务/">
+            
+                <a href="../../第04章_企业架构师进阶之法13讲/50_MongoDB与微服务/">
+            
+                    
+                    50_MongoDB与微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../第04章_企业架构师进阶之法13讲/51_MongoDB与数据中台/">
+            
+                <a href="../../第04章_企业架构师进阶之法13讲/51_MongoDB与数据中台/">
+            
+                    
+                    51_MongoDB与数据中台
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../第04章_企业架构师进阶之法13讲/53_结束语/">
+            
+                <a href="../../第04章_企业架构师进阶之法13讲/53_结束语/">
+            
+                    
+                    53_结束语
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >39_高级集群设计：全球多写</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><p></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz',appKey: 'nWerbwV2WMAxOEmAMkJKvXzs',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script> <p></p>
+<footer class="page-footer"><span class="copyright">blog.colemak.cn&#xFF0C;&#x4F7F;&#x7528;<a href="https://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank">&#x7F72;&#x540D;4.0&#x56FD;&#x9645;(CC BY 4.0)&#x534F;&#x8BAE;</a>&#x53D1;&#x5E03; all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6700;&#x540E;&#x66F4;&#x65B0;&#xFF1A;
+2022-03-07 13:59:01
+</span></footer></body></html>
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../38_实验：搭建两地三中心集群/" class="navigation navigation-prev " aria-label="Previous page: 38_实验：搭建两地三中心集群">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../40_MongoDB上线及升级/" class="navigation navigation-next " aria-label="Next page: 40_MongoDB上线及升级">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"39_高级集群设计：全球多写","level":"1.4.15","depth":2,"next":{"title":"40_MongoDB上线及升级","level":"1.4.16","depth":2,"path":"第03章_分片集群与高级运维之道16讲/40_MongoDB上线及升级/README.md","ref":"第03章_分片集群与高级运维之道16讲/40_MongoDB上线及升级/README.md","articles":[]},"previous":{"title":"38_实验：搭建两地三中心集群","level":"1.4.14","depth":2,"path":"第03章_分片集群与高级运维之道16讲/38_实验：搭建两地三中心集群/README.md","ref":"第03章_分片集群与高级运维之道16讲/38_实验：搭建两地三中心集群/README.md","articles":[]},"dir":"neutral"},"config":{"plugins":["code","valine","hide-element","chapter-fold","expandable-chapters","favicon","lightbox","splitter","-lunr","pageview-count","ancre-navigation","-search","search-plus","-highlight","popup","prism","prism-themes","-sharing","sharing-plus","tbfed-pagefooter","toolbar-button"],"root":"./src","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"blog.colemak.cn，使用<a href='https://creativecommons.org/licenses/by/4.0/deed.zh'>署名4.0国际(CC BY 4.0)协议</a>发布","modify_label":"最后更新：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"prism":{"css":["prism-themes/themes/prism-atom-dark.css"]},"toolbar-button":{"label":"下载PDF","url":"https://blog.colemak.cn/mongodb/","icon":"fa-file-pdf-o"},"splitter":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"popup":{},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"./img/avator.png.icon.ico","bookmark":"./img/avator.png.icon.ico"},"lightbox":{"jquery":true,"sameUuid":false},"pageview-count":{},"prism-themes":{},"ancre-navigation":{"showLevel":true,"associatedWithSummary":true,"mode":"float","printLog":false,"multipleH1":true,"float":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""},"pageTop":{"showLevelIcon":false,"level1Icon":"","level2Icon":"","level3Icon":""}},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"valine":{"placeholder":"Just go go","avatar":"","pageSize":10,"lang":"zh-CN","recordIP":false,"appId":"CHjATxRcQrXst8eJrdwX0vjz-gzGzoHsz","appKey":"nWerbwV2WMAxOEmAMkJKvXzs"},"search-plus":{}},"theme":"default","author":"Victor <victorfengming@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mongodb","language":"zh-hans","links":{"sidebar":{"文档索引页":"https://blog.colemak.cn/index/gitbook/"}},"gitbook":"3.2.3","description":"mongodb,数据库"},"file":{"path":"第03章_分片集群与高级运维之道16讲/39_高级集群设计：全球多写/README.md","mtime":"2022-03-07T05:59:01.706Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-07T06:04:27.758Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toolbar-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
